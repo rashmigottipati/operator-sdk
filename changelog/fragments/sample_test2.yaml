@@ -1,0 +1,4 @@
+entries:
+  - description: sample test 2
+    kind: bugfix
+    breaking: false
