@@ -1,3 +1,13 @@
+## v1.2.3
+
+### Bug Fixes
+
+- fix leader election of follower showing that an old leader will be evicted when the current leader is healthy. ([#3059](https://github.com/operator-framework/operator-sdk/pull/3059))
+- sample test 1.
+- sample test 2.
+- sample test 3.
+- bump api validation library to 431198de9fc2cf82f369efb5c4a90a9cc079a1c3 to fix "CRD key not found" validation bug. ([#3154](https://github.com/operator-framework/operator-sdk/pull/3154))
+
 ## v0.18.0
 
 ### Additions
