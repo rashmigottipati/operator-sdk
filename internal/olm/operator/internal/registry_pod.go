@@ -46,7 +46,13 @@ const (
 	defaultIndexImage        = "quay.io/operator-framework/upstream-opm-builder:latest"
 	defaultContainerName     = "registry-grpc"
 	defaultContainerPortName = "grpc"
-	defaultGRPCPort          = 50051
+
+	DefaultGRPCPort = 50051
+)
+
+var (
+	// Internal error
+	errPodNotInit = errors.New("internal error: RegistryPod not initialized")
 )
 
 var (
@@ -89,7 +95,7 @@ func NewRegistryPod(client client.Client, dbPath, bundleImage, namespace string)
 	rp := &RegistryPod{}
 
 	if rp.GRPCPort == 0 {
-		rp.GRPCPort = defaultGRPCPort
+		rp.GRPCPort = DefaultGRPCPort
 	}
 
 	if len(strings.TrimSpace(rp.IndexImage)) < 1 {
